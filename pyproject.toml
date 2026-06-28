@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gb-robot-models"
+version = "0.1.0"
+description = "Public robot models from Generative Bionics"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "CC-BY-NC-4.0" }
+dependencies = [
+	"resolve-robotics-uri-py",
+]
+
+[project.scripts]
+gb-robot-models = "gb_robot_models.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gb_robot_models"]
+
+[tool.hatch.build.targets.wheel.shared-data]
+"package.xml" = "share/gb_robot_models/package.xml"
+"share" = "share"

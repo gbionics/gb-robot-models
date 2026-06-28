@@ -1,0 +1,2167 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="gene01">
+  <link name="pelvis">
+    <inertial>
+      <mass value="6.07683" />
+      <origin xyz="0.00133474 -1.32644e-05 0.0218008" rpy="0 0 0" />
+      <inertia ixx="0.0505191" ixy="5.25662e-05" ixz="0.000951564" iyy="0.0170431" iyz="-3.28709e-05" izz="0.0471926" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_torso_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_torso_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_hip_pitch" type="revolute">
+    <origin xyz="0.0061 0.07 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <parent link="pelvis" />
+    <child link="l_hip_1" />
+    <limit lower="-1.95477" upper="0.523599" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_hip_1">
+    <inertial>
+      <mass value="2.6878" />
+      <origin xyz="-0.0639924 0.0171995 -0.0758531" rpy="0 0 0" />
+      <inertia ixx="0.00825581" ixy="0.000260785" ixz="-0.00141979" iyy="0.00992094" iyz="-0.000302588" izz="0.00854064" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hip_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hip_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_hip_pitch" type="revolute">
+    <origin xyz="0.0061 -0.07 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <parent link="pelvis" />
+    <child link="r_hip_1" />
+    <limit lower="-1.95477" upper="0.523599" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_hip_1">
+    <inertial>
+      <mass value="2.69149" />
+      <origin xyz="-0.0640764 -0.0169009 -0.0762838" rpy="0 0 0" />
+      <inertia ixx="0.00830056" ixy="-0.000260499" ixz="-0.00140679" iyy="0.0100046" iyz="0.000282675" izz="0.00852075" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hip_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hip_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="torso_yaw" type="revolute">
+    <origin xyz="0 0 0.161" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <parent link="pelvis" />
+    <child link="waist" />
+    <limit lower="-0.785398" upper="0.785398" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="waist">
+    <inertial>
+      <mass value="2.30786" />
+      <origin xyz="-0.0156033 -5.40072e-05 -0.0171571" rpy="0 0 0" />
+      <inertia ixx="0.00447931" ixy="3.62771e-06" ixz="0.000649005" iyy="0.00571977" iyz="6.2513e-06" izz="0.00409666" />
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_torso_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="torso_roll" type="revolute">
+    <origin xyz="-0.053 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="waist" />
+    <child link="chest" />
+    <limit lower="-0.785398" upper="0.785398" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="chest">
+    <inertial>
+      <mass value="13.4815" />
+      <origin xyz="0.0393213 0.000204239 0.165103" rpy="0 0 0" />
+      <inertia ixx="0.193384" ixy="-0.000114449" ixz="0.0136994" iyy="0.186099" iyz="0.000500341" izz="0.116093" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_chest.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_chest_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="battery_fixed_joint" type="fixed">
+    <origin xyz="-0.00533 0 0.193" rpy="0 0 0" />
+    <parent link="chest" />
+    <child link="battery" />
+  </joint>
+  <link name="battery">
+    <inertial>
+      <mass value="3.54285" />
+      <origin xyz="-0.090343 0.000767017 -0.0469721" rpy="0 0 0" />
+      <inertia ixx="0.021903" ixy="1.00824e-05" ixz="0.000635213" iyy="0.0230811" iyz="1.00737e-05" izz="0.00447027" />
+    </inertial>
+  </link>
+  <joint name="l_shoulder_pitch" type="revolute">
+    <origin xyz="0.0272776 0.106003 0.235236" rpy="0.423202 0 -0.261799" />
+    <axis xyz="0 1 0" />
+    <parent link="chest" />
+    <child link="l_shoulder_1" />
+    <limit lower="-2.35619" upper="0.785398" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_shoulder_1">
+    <inertial>
+      <mass value="1.37021" />
+      <origin xyz="0.014169 0.10209 0.000650752" rpy="0 0 0" />
+      <inertia ixx="0.00318824" ixy="-0.000494008" ixz="1.07604e-05" iyy="0.00131396" iyz="1.38636e-05" izz="0.00330306" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_shoulder_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_shoulder_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_shoulder_pitch" type="revolute">
+    <origin xyz="0.0272776 -0.106003 0.235236" rpy="-0.423202 0 0.261799" />
+    <axis xyz="0 1 0" />
+    <parent link="chest" />
+    <child link="r_shoulder_1" />
+    <limit lower="-2.35619" upper="0.785398" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_shoulder_1">
+    <inertial>
+      <mass value="1.36391" />
+      <origin xyz="0.0143502 -0.101831 0.000656516" rpy="0 0 0" />
+      <inertia ixx="0.00317532" ixy="0.000506519" ixz="1.10819e-05" iyy="0.00130166" iyz="-1.6689e-05" izz="0.00327825" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_shoulder_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_shoulder_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_shoulder_roll" type="revolute">
+    <origin xyz="0.05 -0.124 0" rpy="0.1309 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="r_shoulder_1" />
+    <child link="r_shoulder_2" />
+    <limit lower="-2.61799" upper="0.261799" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_shoulder_2">
+    <inertial>
+      <mass value="1.44025" />
+      <origin xyz="-0.0350667 -0.000443968 -0.0871412" rpy="0 0 0" />
+      <inertia ixx="0.00298988" ixy="-2.83961e-06" ixz="-0.000237193" iyy="0.00323073" iyz="3.29845e-05" izz="0.00191501" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_shoulder_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_shoulder_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_shoulder_yaw" type="revolute">
+    <origin xyz="-0.037 0 -0.127" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <parent link="r_shoulder_2" />
+    <child link="r_upper_arm" />
+    <limit lower="-1.8326" upper="1.8326" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_upper_arm">
+    <inertial>
+      <mass value="1.83631" />
+      <origin xyz="-0.000317683 -0.000310092 -0.0843862" rpy="0 0 0" />
+      <inertia ixx="0.00587099" ixy="2.62617e-06" ixz="2.3063e-05" iyy="0.00556103" iyz="-3.05512e-05" izz="0.00196228" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_upperarm.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_upperarm_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_elbow" type="revolute">
+    <origin xyz="0 -0.0295 -0.1245" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <parent link="r_upper_arm" />
+    <child link="r_forearm" />
+    <limit lower="-1.91986" upper="0.0872665" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_forearm">
+    <inertial>
+      <mass value="0.753971" />
+      <origin xyz="-0.000896101 0.0303919 -0.0700135" rpy="0 0 0" />
+      <inertia ixx="0.00140445" ixy="1.60109e-06" ixz="-1.086e-05" iyy="0.00107206" iyz="-3.91546e-07" izz="0.000932689" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_forearm.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_forearm_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_wrist_yaw" type="revolute">
+    <origin xyz="0 0.02945 -0.106" rpy="0 0 -3.11914e-06" />
+    <axis xyz="0 0 1" />
+    <parent link="r_forearm" />
+    <child link="r_wrist_1" />
+    <limit lower="-1.48353" upper="1.48353" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_wrist_1">
+    <inertial>
+      <mass value="1.48343" />
+      <origin xyz="0.00349941 0.00404736 -0.0601174" rpy="0 0 0" />
+      <inertia ixx="0.00452511" ixy="3.35083e-06" ixz="2.88445e-05" iyy="0.00464188" iyz="0.000238883" izz="0.00163376" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_wrist_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_wrist_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_wrist_pitch" type="revolute">
+    <origin xyz="-6.23828e-08 0.01 -0.179" rpy="0 -0.0871899 6.23828e-06" />
+    <axis xyz="6.21459e-06 1 -5.43227e-07" />
+    <parent link="r_wrist_1" />
+    <child link="r_wrist_2" />
+    <limit lower="-0.383972" upper="0.558505" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_wrist_2">
+    <inertial>
+      <mass value="0.0317267" />
+      <origin xyz="0 -8.61147e-05 0" rpy="0 0 0" />
+      <inertia ixx="1.63083e-06" ixy="0" ixz="0" iyy="1.85436e-06" iyz="0" izz="2.82092e-06" />
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_wrist_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_wrist_roll" type="revolute">
+    <origin xyz="0 0 0" rpy="-2.71628e-07 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="r_wrist_2" />
+    <child link="r_wrist_3" />
+    <limit lower="-0.733038" upper="1.01229" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_wrist_3">
+    <inertial>
+      <mass value="0.116771" />
+      <origin xyz="-0.000111758 -0.0114069 -0.0109512" rpy="0 0 0" />
+      <inertia ixx="3.38066e-05" ixy="1.06902e-07" ixz="-1.26173e-07" iyy="5.55608e-05" iyz="2.86636e-06" izz="6.45306e-05" />
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_wrist_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head">
+    <inertial>
+      <mass value="1.74437" />
+      <origin xyz="0.0216346 0.00025579 0.209434" rpy="0 0 0" />
+      <inertia ixx="0.0119888" ixy="5.87204e-05" ixz="0.00211453" iyy="0.0138491" iyz="-1.6689e-05" izz="0.0107524" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_head.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_head_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_shoulder_roll" type="revolute">
+    <origin xyz="0.0500248 0.123987 1.31115e-05" rpy="-0.129894 -0.000368173 -0.000368543" />
+    <axis xyz="-1 0 0" />
+    <parent link="l_shoulder_1" />
+    <child link="l_shoulder_2" />
+    <limit lower="-2.61799" upper="0.261799" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_shoulder_2">
+    <inertial>
+      <mass value="1.4526" />
+      <origin xyz="-0.0353773 0.000293288 -0.0868581" rpy="0 0 0" />
+      <inertia ixx="0.00305536" ixy="1.08982e-06" ixz="-0.000199287" iyy="0.0033217" iyz="-2.70821e-05" izz="0.00195065" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_shoulder_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_shoulder_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_shoulder_yaw" type="revolute">
+    <origin xyz="-0.037 0 -0.127" rpy="0 0 0" />
+    <axis xyz="0 0 -1" />
+    <parent link="l_shoulder_2" />
+    <child link="l_upper_arm" />
+    <limit lower="-1.8326" upper="1.8326" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_upper_arm">
+    <inertial>
+      <mass value="1.83631" />
+      <origin xyz="-0.000224707 0.000857938 -0.0835584" rpy="0 0 0" />
+      <inertia ixx="0.005836" ixy="3.5724e-06" ixz="1.26957e-05" iyy="0.00556749" iyz="6.86509e-05" izz="0.0019212" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_upperarm.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_upperarm_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_elbow" type="revolute">
+    <origin xyz="0 0.0295 -0.1245" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <parent link="l_upper_arm" />
+    <child link="l_forearm" />
+    <limit lower="-1.91986" upper="0.0872665" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_forearm">
+    <inertial>
+      <mass value="0.735974" />
+      <origin xyz="-0.00111781 -0.0292932 -0.0717255" rpy="0 0 0" />
+      <inertia ixx="0.00127186" ixy="1.73377e-07" ixz="-7.9431e-06" iyy="0.000978868" iyz="-6.1076e-05" izz="0.000890362" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_forearm.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_forearm_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_wrist_yaw" type="revolute">
+    <origin xyz="2.03519e-09 -0.02945 -0.106" rpy="2.32719e-08 4.03082e-08 -1.06004e-10" />
+    <axis xyz="0 0 -1" />
+    <parent link="l_forearm" />
+    <child link="l_wrist_1" />
+    <limit lower="-1.48353" upper="1.48353" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_wrist_1">
+    <inertial>
+      <mass value="1.48366" />
+      <origin xyz="-0.00349497 -0.00415242 -0.0608275" rpy="0 0 0" />
+      <inertia ixx="0.00454895" ixy="4.31931e-06" ixz="-3.2007e-05" iyy="0.00466308" iyz="-0.00024431" izz="0.00163268" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_wrist_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_wrist_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_wrist_pitch" type="revolute">
+    <origin xyz="-7.5629e-08 -0.01 -0.179" rpy="0 -0.0872744 -7.56289e-06" />
+    <axis xyz="-7.53411e-06 1 6.59209e-07" />
+    <parent link="l_wrist_1" />
+    <child link="l_wrist_2" />
+    <limit lower="-0.383972" upper="0.558505" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_wrist_2">
+    <inertial>
+      <mass value="0.0325076" />
+      <origin xyz="0 8.4046e-05 0" rpy="0 0 0" />
+      <inertia ixx="1.70527e-06" ixy="0" ixz="0" iyy="1.87935e-06" iyz="0" izz="2.89536e-06" />
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_wrist_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_wrist_roll" type="revolute">
+    <origin xyz="0 0 0" rpy="9.33556e-07 0 0" />
+    <axis xyz="-1 0 0" />
+    <parent link="l_wrist_2" />
+    <child link="l_wrist_3" />
+    <limit lower="-0.733038" upper="1.01229" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_wrist_3">
+    <inertial>
+      <mass value="0.100014" />
+      <origin xyz="2.79852e-06 0.0128792 -0.00831382" rpy="0 0 0" />
+      <inertia ixx="2.49506e-05" ixy="3.45134e-09" ixz="-2.36185e-09" iyy="4.83851e-05" iyz="-3.45736e-07" izz="5.84398e-05" />
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_wrist_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_hip_roll" type="revolute">
+    <origin xyz="-0.0585 -0.0163 -0.09" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="r_hip_1" />
+    <child link="r_hip_2" />
+    <limit lower="-0.959931" upper="0.261799" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_hip_2">
+    <inertial>
+      <mass value="2.44583" />
+      <origin xyz="0.0552926 -0.0182122 -0.0786529" rpy="0 0 0" />
+      <inertia ixx="0.00592679" ixy="0.000331834" ixz="0.000961762" iyy="0.00636837" iyz="-0.00060215" izz="0.00485679" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hip_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hip_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_hip_yaw" type="revolute">
+    <origin xyz="0.06095 -0.022 -0.1242" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <parent link="r_hip_2" />
+    <child link="r_upper_leg" />
+    <limit lower="-1.22173" upper="1.22173" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_upper_leg">
+    <inertial>
+      <mass value="5.94868" />
+      <origin xyz="0.00226774 0.00388385 -0.102592" rpy="0 0 0" />
+      <inertia ixx="0.0393015" ixy="0.000446244" ixz="-0.00246191" iyy="0.040886" iyz="0.00104079" izz="0.013833" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_upper_leg.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_upper_leg_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_knee" type="revolute">
+    <origin xyz="-0.02855 0.02245 -0.2658" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <parent link="r_upper_leg" />
+    <child link="r_lower_leg" />
+    <limit lower="-0.0523599" upper="2.35619" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_lower_leg">
+    <inertial>
+      <mass value="5.47204" />
+      <origin xyz="0.0379237 -0.0152715 -0.136406" rpy="0 0 0" />
+      <inertia ixx="0.0897255" ixy="0.000161029" ixz="-0.00526783" iyy="0.0904571" iyz="-0.002391" izz="0.00929187" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_lower_leg.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_lower_leg_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_ankle_pitch" type="revolute">
+    <origin xyz="0.0149861 -0.01775 -0.420239" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <parent link="r_lower_leg" />
+    <child link="r_ankle_1" />
+    <limit lower="-1.0472" upper="0.523599" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_ankle_1">
+    <inertial>
+      <mass value="0.248377" />
+      <origin xyz="-0.00403866 0.000117112 -0.0177343" rpy="0 0 0" />
+      <inertia ixx="7.41205e-05" ixy="-4.52538e-07" ixz="-8.71102e-06" iyy="0.00011089" iyz="-1.28907e-06" izz="6.84884e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_ankle_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_ankle_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_ankle_roll" type="revolute">
+    <origin xyz="-0.0005 0 -0.03" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="r_ankle_1" />
+    <child link="r_ankle_2" />
+    <limit lower="-0.436332" upper="0.436332" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="r_ankle_2">
+    <inertial>
+      <mass value="0.356266" />
+      <origin xyz="0.0110617 0 -0.00299643" rpy="0 0 0" />
+      <inertia ixx="0.000149662" ixy="0" ixz="-4.24474e-05" iyy="0.000527455" iyz="0" izz="0.000517603" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_ankle_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_ankle_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_foot_fixed_joint" type="fixed">
+    <origin xyz="0 0 -0.025" rpy="0 0 0" />
+    <parent link="r_ankle_2" />
+    <child link="r_foot" />
+  </joint>
+  <link name="r_foot">
+    <inertial>
+      <mass value="0.928143" />
+      <origin xyz="0.0491909 3.83776e-07 -0.0155162" rpy="0 0 0" />
+      <inertia ixx="0.000935773" ixy="-1.45315e-07" ixz="0.000161567" iyy="0.00599004" iyz="0" izz="0.00653162" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_foot.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.168089 -0.0000000001763 -0.0168132" rpy="0 -0.5235987756 0" />
+      <geometry>
+        <box size="0.04042 0.11641 0.02" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0419530 -0.0000000016645 -0.0255773" rpy="0 0 0" />
+      <geometry>
+        <box size="0.22727 0.11641 0.02" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0837626 0.0000000006195 -0.0205391" rpy="0 0.3490658504 0" />
+      <geometry>
+        <box size="0.03299 0.11641 0.02" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_hip_roll" type="revolute">
+    <origin xyz="-0.0585 0.0163 -0.09" rpy="0 0 0" />
+    <axis xyz="-1 0 0" />
+    <parent link="l_hip_1" />
+    <child link="l_hip_2" />
+    <limit lower="-0.959931" upper="0.261799" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_hip_2">
+    <inertial>
+      <mass value="2.44583" />
+      <origin xyz="0.0555811 0.018143 -0.0786529" rpy="0 0 0" />
+      <inertia ixx="0.00592761" ixy="-0.000339658" ixz="0.000943156" iyy="0.00637407" iyz="0.000601682" izz="0.0048633" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hip_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hip_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_hip_yaw" type="revolute">
+    <origin xyz="0.06095 0.022 -0.1242" rpy="0 0 0" />
+    <axis xyz="0 0 -1" />
+    <parent link="l_hip_2" />
+    <child link="l_upper_leg" />
+    <limit lower="-1.22173" upper="1.22173" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_upper_leg">
+    <inertial>
+      <mass value="5.94868" />
+      <origin xyz="0.00245895 -0.00382835 -0.102456" rpy="0 0 0" />
+      <inertia ixx="0.0392667" ixy="-0.000443281" ixz="-0.00246147" iyy="0.0408932" iyz="-0.00103306" izz="0.0138951" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_upper_leg.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_upper_leg_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_knee" type="revolute">
+    <origin xyz="-0.02855 -0.02245 -0.2658" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <parent link="l_upper_leg" />
+    <child link="l_lower_leg" />
+    <limit lower="-0.0523599" upper="2.35619" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_lower_leg">
+    <inertial>
+      <mass value="5.47258" />
+      <origin xyz="0.03792 0.015009 -0.136392" rpy="0 0 0" />
+      <inertia ixx="0.0897021" ixy="-0.000194888" ixz="-0.00526269" iyy="0.0904397" iyz="0.00196454" izz="0.00928705" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_lower_leg.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_lower_leg_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_ankle_pitch" type="revolute">
+    <origin xyz="0.0149861 0.01775 -0.420239" rpy="0 -2.42499e-07 0" />
+    <axis xyz="0 1 0" />
+    <parent link="l_lower_leg" />
+    <child link="l_ankle_1" />
+    <limit lower="-1.0472" upper="0.523599" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_ankle_1">
+    <inertial>
+      <mass value="0.245451" />
+      <origin xyz="-0.00408682 0.00027965 -0.0179458" rpy="0 0 0" />
+      <inertia ixx="7.25312e-05" ixy="-6.15581e-07" ixz="-8.49892e-06" iyy="0.000109736" iyz="-2.00502e-06" izz="6.7782e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_ankle_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_ankle_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_ankle_roll" type="revolute">
+    <origin xyz="0 0 -0.03" rpy="0 0 0" />
+    <axis xyz="-1 0 0" />
+    <parent link="l_ankle_1" />
+    <child link="l_ankle_2" />
+    <limit lower="-0.436332" upper="0.436332" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="l_ankle_2">
+    <inertial>
+      <mass value="0.356266" />
+      <origin xyz="0.0105617 0 -0.00299643" rpy="0 0 0" />
+      <inertia ixx="0.000149662" ixy="0" ixz="-4.24474e-05" iyy="0.000527455" iyz="0" izz="0.000517603" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_ankle_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_ankle_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_foot_fixed_joint" type="fixed">
+    <origin xyz="0 0 -0.025" rpy="0 0 0" />
+    <parent link="l_ankle_2" />
+    <child link="l_foot" />
+  </joint>
+  <link name="l_foot">
+    <inertial>
+      <mass value="0.928143" />
+      <origin xyz="0.0486902 3.37689e-07 -0.0155194" rpy="0 0 0" />
+      <inertia ixx="0.000935787" ixy="-1.43247e-07" ixz="0.000161268" iyy="0.00599023" iyz="0" izz="0.0065318" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_foot.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.168089 -0.0000000001763 -0.0168132" rpy="0 -0.5235987756 0" />
+      <geometry>
+        <box size="0.04042 0.11641 0.02" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0419530 -0.0000000016645 -0.0255773" rpy="0 0 0" />
+      <geometry>
+        <box size="0.22727 0.11641 0.02" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0837626 0.0000000006195 -0.0205391" rpy="0 0.3490658504 0" />
+      <geometry>
+        <box size="0.03299 0.11641 0.02" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="chest_camera_front" />
+  <joint name="chest_camera_front_fixed_joint" type="fixed">
+    <origin xyz="0.184418 0 0.230569" rpy="1.5708 0 1.5708" />
+    <parent link="chest" />
+    <child link="chest_camera_front" />
+  </joint>
+  <link name="depth_camera" />
+  <joint name="depth_camera_fixed_joint" type="fixed">
+    <origin xyz="0.154451 0.0175 -0.0174506" rpy="-2.35619 -6.62128e-08 -1.5708" />
+    <parent link="chest" />
+    <child link="depth_camera" />
+  </joint>
+  <link name="rgb_camera" />
+  <joint name="rgb_camera_fixed_joint" type="fixed">
+    <origin xyz="0.154451 -0.0115 -0.0174506" rpy="-2.35619 -6.62128e-08 -1.5708" />
+    <parent link="chest" />
+    <child link="rgb_camera" />
+  </joint>
+  <link name="head_camera_back" />
+  <joint name="head_camera_back_fixed_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="head" />
+    <child link="head_camera_back" />
+  </joint>
+  <link name="head_camera_left" />
+  <joint name="head_camera_left_fixed_joint" type="fixed">
+    <origin xyz="0.117516 0.03 0.24454" rpy="-1.5708 -1.68524e-06 -1.5708" />
+    <parent link="head" />
+    <child link="head_camera_left" />
+  </joint>
+  <link name="head_camera_right" />
+  <joint name="head_camera_right_fixed_joint" type="fixed">
+    <origin xyz="0.115878 -0.03 0.24454" rpy="-1.5708 -1.81429e-06 -1.5708" />
+    <parent link="head" />
+    <child link="head_camera_right" />
+  </joint>
+  <link name="l_hand" />
+  <joint name="l_hand_fixed_joint" type="fixed">
+    <origin xyz="0 0 -0.0230879" rpy="0 0 0" />
+    <parent link="l_wrist_3" />
+    <child link="l_hand" />
+  </joint>
+  <link name="l_sole" />
+  <joint name="l_sole_fixed_joint" type="fixed">
+    <origin xyz="-0.015 0 -0.036" rpy="0 0 0" />
+    <parent link="l_foot" />
+    <child link="l_sole" />
+  </joint>
+  <link name="r_hand" />
+  <joint name="r_hand_fixed_joint" type="fixed">
+    <origin xyz="0 0 -0.0230879" rpy="0 0 0" />
+    <parent link="r_wrist_3" />
+    <child link="r_hand" />
+  </joint>
+  <link name="r_sole" />
+  <joint name="r_sole_fixed_joint" type="fixed">
+    <origin xyz="-0.015 0 -0.036" rpy="0 0 0" />
+    <parent link="r_foot" />
+    <child link="r_sole" />
+  </joint>
+  <link name="chest_imu" />
+  <joint name="chest_imu_fixed_joint" type="fixed">
+    <origin xyz="0.0996 0.00770035 0.0677951" rpy="-1.57067 -1.5708 1.57067" />
+    <parent link="chest" />
+    <child link="chest_imu" />
+  </joint>
+  <joint name="l_hand__to__l_palm__fixed" type="fixed">
+    <parent link="l_hand" />
+    <child link="l_palm" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="l_palm">
+    <inertial>
+      <mass value="0.30699846698403666" />
+      <origin xyz="-0.0033547278825463906 0.002864324168362938 -0.06940726836655034" rpy="0 -0 0" />
+      <inertia ixx="4.319704540206254e-4" ixy="4.6101003306276026e-6" ixz="-3.355945054968283e-5" iyy="5.833807501166991e-4" iyz="-4.18994002973716e-5" izz="2.771976551933003e-4" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_palm.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_palm_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_index_prox_1">
+    <inertial>
+      <mass value="0.0021276915673659456" />
+      <origin xyz="-3.5876474478972395e-5 0.006025024255326222 -1.1183589471164268e-10" rpy="0 -0 0" />
+      <inertia ixx="6.979458512928672e-8" ixy="1.9490010736954926e-10" ixz="1.4802103065014595e-11" iyy="4.7567408958291594e-8" iyz="1.6073923037455042e-10" izz="3.8434705305947376e-8" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_index_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_index_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_little_prox_1">
+    <inertial>
+      <mass value="0.0021276915673659456" />
+      <origin xyz="-3.5876474478972395e-5 0.0060250242553262084 -1.1183590511998355e-10" rpy="0 -0 0" />
+      <inertia ixx="6.979458512929247e-8" ixy="1.9490010736926962e-10" ixz="1.4802103065257492e-11" iyy="4.756740895828503e-8" iyz="1.607392303725139e-10" izz="3.8434705305952604e-8" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_little_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_little_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_middle_prox_1">
+    <inertial>
+      <mass value="0.0021276915673659456" />
+      <origin xyz="-3.5876474478972395e-5 0.006025024255326181 -1.1183590685470701e-10" rpy="0 -0 0" />
+      <inertia ixx="6.979458512929798e-8" ixy="1.949001073695555e-10" ixz="1.4802103065043938e-11" iyy="4.756740895829037e-8" iyz="1.6073923037174465e-10" izz="3.843470530595988e-8" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_middle_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_middle_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_ring_prox_1">
+    <inertial>
+      <mass value="0.0021276915673659456" />
+      <origin xyz="-3.5876474478972395e-5 0.006025024255326222 -1.1183590338526006e-10" rpy="0 -0 0" />
+      <inertia ixx="6.979458512929561e-8" ixy="1.9490010736962298e-10" ixz="1.4802103065227275e-11" iyy="4.7567408958291806e-8" iyz="1.607392303721913e-10" izz="3.843470530595607e-8" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_ring_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_ring_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_thumb_prox_1">
+    <inertial>
+      <mass value="0.05648029423268857" />
+      <origin xyz="-0.02268478385951956 -3.9120634117220665e-7 -0.0018534905582252969" rpy="0 -0 0" />
+      <inertia ixx="4.796043733585085e-6" ixy="-1.6600511362748454e-9" ixz="-7.322347667860471e-8" iyy="1.3049008406517944e-5" iyz="-8.553264872161121e-11" izz="1.3116582557057337e-5" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_thumb_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_thumb_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_thumb_prox_2">
+    <inertial>
+      <mass value="0.003062338444343234" />
+      <origin xyz="2.314073425848523e-6 0.008185983310122658 1.820526437934511e-10" rpy="0 -0 0" />
+      <inertia ixx="1.1635422940412645e-7" ixy="1.1369639950680123e-10" ixz="-4.1538105000669085e-10" iyy="7.864831664605888e-8" iyz="-4.983882978062494e-10" izz="5.766802948706831e-8" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_thumb_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_thumb_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_thumb_prox_3">
+    <inertial>
+      <mass value="0.03332333144818648" />
+      <origin xyz="3.858795834602406e-4 0.021497392480190933 -9.96899486332796e-5" rpy="0 -0 0" />
+      <inertia ixx="4.912855391658238e-6" ixy="-1.0935932306471258e-7" ixz="9.88953811703884e-9" iyy="3.0013021564041048e-6" iyz="5.981550861059723e-8" izz="6.535014902021153e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_thumb_3.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_thumb_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_thumb_medial">
+    <inertial>
+      <mass value="0.023528186745090843" />
+      <origin xyz="6.095140385829548e-4 0.021443352582473135 -9.004751597154331e-4" rpy="0 -0 0" />
+      <inertia ixx="3.558690727009137e-6" ixy="-3.099864495484364e-7" ixz="-1.3131351900266258e-8" iyy="2.953222381827776e-6" iyz="-1.7554836965677973e-7" izz="5.576827983116154e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_thumb_4.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_thumb_4_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_thumb_distal">
+    <inertial>
+      <mass value="0.011187947352037774" />
+      <origin xyz="-5.434267052400327e-5 0.016044805399036244 -0.001360375188144601" rpy="0 -0 0" />
+      <inertia ixx="1.1720276586027162e-6" ixy="-1.2494702059395047e-8" ixz="-3.125806675664347e-10" iyy="1.2067926062452504e-6" iyz="1.3917335656670368e-8" izz="1.8304444855400358e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_thumb_5.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_thumb_5_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_ring_prox_2">
+    <inertial>
+      <mass value="0.019855487555176243" />
+      <origin xyz="-5.825148649360942e-4 0.024115295035758044 -1.820655791968332e-4" rpy="0 -0 0" />
+      <inertia ixx="4.029963994257451e-6" ixy="1.3237552949853183e-7" ixz="1.97455437414072e-9" iyy="1.3325281830419667e-6" iyz="-7.084763295675684e-8" izz="4.419715525570493e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_ring_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_ring_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_ring_medial">
+    <inertial>
+      <mass value="0.0152618949631244" />
+      <origin xyz="-1.1155588874802239e-4 0.020049937684603197 -9.556153820669561e-4" rpy="0 -0 0" />
+      <inertia ixx="2.198758654752278e-6" ixy="1.771939887322014e-7" ixz="-3.8026292185791055e-9" iyy="1.1204370609491047e-6" iyz="-1.0229749788259788e-7" izz="2.771947854192815e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_ring_3.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_ring_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_ring_distal">
+    <inertial>
+      <mass value="0.008221728756962298" />
+      <origin xyz="-1.6426019224461547e-4 0.013413384114830368 -9.463474728170755e-4" rpy="0 -0 0" />
+      <inertia ixx="6.521121917353942e-7" ixy="1.6406989008997944e-8" ixz="-1.099978189125963e-9" iyy="6.109958391800661e-7" iyz="-7.37179834189936e-9" izz="9.557095941549535e-7" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_ring_4.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_ring_4_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_middle_prox_2">
+    <inertial>
+      <mass value="0.019855487555176243" />
+      <origin xyz="-5.825148649361012e-4 0.0241152950357581 -1.8206557919683234e-4" rpy="0 -0 0" />
+      <inertia ixx="4.029963994257139e-6" ixy="1.323755294985467e-7" ixz="1.974554374140665e-9" iyy="1.3325281830419624e-6" iyz="-7.084763295675597e-8" izz="4.419715525570182e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_middle_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_middle_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_middle_medial">
+    <inertial>
+      <mass value="0.0152618949631244" />
+      <origin xyz="-1.1155588874802586e-4 0.020049937684603197 -9.556153820669553e-4" rpy="0 -0 0" />
+      <inertia ixx="2.1987586547522103e-6" ixy="1.7719398873220882e-7" ixz="-3.80262921857969e-9" iyy="1.1204370609490111e-6" iyz="-1.0229749788259995e-7" izz="2.771947854192766e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_middle_3.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_middle_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_middle_distal">
+    <inertial>
+      <mass value="0.008221728756962298" />
+      <origin xyz="-1.6426019224461373e-4 0.01341338411483034 -9.463474728170755e-4" rpy="0 -0 0" />
+      <inertia ixx="6.521121917351796e-7" ixy="1.640698900899693e-8" ixz="-1.0999781891261196e-9" iyy="6.10995839180047e-7" iyz="-7.371798341896051e-9" izz="9.557095941547193e-7" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_middle_4.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_middle_4_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_little_prox_2">
+    <inertial>
+      <mass value="0.019855487555176243" />
+      <origin xyz="-5.825148649360942e-4 0.0241152950357581 -1.820655791968332e-4" rpy="0 -0 0" />
+      <inertia ixx="4.029963994257244e-6" ixy="1.323755294985323e-7" ixz="1.9745543741401715e-9" iyy="1.3325281830419961e-6" iyz="-7.084763295675253e-8" izz="4.419715525570317e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_little_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_little_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_little_medial">
+    <inertial>
+      <mass value="0.0152618949631244" />
+      <origin xyz="-1.1155588874802239e-4 0.020049937684603142 -9.556153820669553e-4" rpy="0 -0 0" />
+      <inertia ixx="2.1987586547524153e-6" ixy="1.7719398873219826e-7" ixz="-3.802629218578546e-9" iyy="1.120437060949112e-6" iyz="-1.0229749788259794e-7" izz="2.7719478541929556e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_little_3.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_little_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_little_distal">
+    <inertial>
+      <mass value="0.008221728756962298" />
+      <origin xyz="-1.6426019224462587e-4 0.01341338411483034 -9.463474728170766e-4" rpy="0 -0 0" />
+      <inertia ixx="6.521121917354689e-7" ixy="1.6406989008986466e-8" ixz="-1.0999781891250056e-9" iyy="6.109958391800932e-7" iyz="-7.371798341904138e-9" izz="9.55709594155055e-7" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_little_4.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_little_4_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_index_prox_2">
+    <inertial>
+      <mass value="0.019855487555176243" />
+      <origin xyz="-5.825148649360942e-4 0.0241152950357581 -1.8206557919683147e-4" rpy="0 -0 0" />
+      <inertia ixx="4.029963994257186e-6" ixy="1.3237552949857297e-7" ixz="1.9745543741414326e-9" iyy="1.3325281830419309e-6" iyz="-7.084763295675683e-8" izz="4.419715525570195e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_index_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_index_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_index_medial">
+    <inertial>
+      <mass value="0.0152618949631244" />
+      <origin xyz="-1.1155588874801892e-4 0.020049937684603197 -9.556153820669561e-4" rpy="0 -0 0" />
+      <inertia ixx="2.1987586547522137e-6" ixy="1.7719398873219227e-7" ixz="-3.80262921857912e-9" iyy="1.1204370609491202e-6" iyz="-1.0229749788259836e-7" izz="2.771947854192766e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_index_3.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_index_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_index_distal">
+    <inertial>
+      <mass value="0.008221728756962298" />
+      <origin xyz="-1.642601922446224e-4 0.013413384114830312 -9.463474728170782e-4" rpy="0 -0 0" />
+      <inertia ixx="6.52112191735586e-7" ixy="1.640698900900471e-8" ixz="-1.0999781891273687e-9" iyy="6.109958391800685e-7" iyz="-7.371798341903304e-9" izz="9.557095941551473e-7" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_index_4.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_l_hand_index_4_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_index_1_add" type="revolute">
+    <origin xyz="0.030779240018004216 -0.005377911169679216 -0.12214005637893113" rpy="-1.5713199255704984 -0.08726646259971634 -1.570796326794897" />
+    <axis xyz="1 -1.1102230246251565e-16 -6.55711921392077e-16" />
+    <parent link="l_palm" />
+    <child link="l_index_prox_1" />
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_little_1_add" type="revolute">
+    <origin xyz="-0.0575057181481814 -0.0038292523579945975 -0.10443880516224406" rpy="-1.832595717059831 -0.08726646259971636 -1.570796326794897" />
+    <axis xyz="1 -1.3877787807814457e-17 1.700029006457271e-16" />
+    <parent link="l_palm" />
+    <child link="l_little_prox_1" />
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_middle_1_add" type="revolute">
+    <origin xyz="2.474277839730442e-5 -0.006017712162470984 -0.12945301518989988" rpy="-1.6580627893946125 -0.08726646259971628 -1.5707963267948972" />
+    <axis xyz="1 -8.326672684688674e-17 1.1188966420050406e-16" />
+    <parent link="l_palm" />
+    <child link="l_middle_prox_1" />
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_ring_1_add" type="revolute">
+    <origin xyz="-0.028988841486914628 -0.0049218314373573584 -0.11692704118426307" rpy="-1.745329254529136 -0.0872664625997164 -1.570796326794897" />
+    <axis xyz="1 1.3877787807814457e-17 2.237793284010081e-16" />
+    <parent link="l_palm" />
+    <child link="l_ring_prox_1" />
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_thumb_1_rot" type="revolute">
+    <origin xyz="0.012404891437995296 -0.019432540324975274 -0.0322620651632627" rpy="-2.280460273084301 -0.6160560331490923 2.352741078622881" />
+    <axis xyz="-1 -5.551115123125783e-17 -5.551115123125783e-17" />
+    <parent link="l_palm" />
+    <child link="l_thumb_prox_1" />
+    <limit lower="-0.9599310885968813" upper="0.6981317007977318" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_thumb_1_add" type="revolute">
+    <origin xyz="-0.04529999999999997 2.949029909160572e-17 -8.673617379884035e-18" rpy="0 -1.5707963267948966 1.5707963267948968" />
+    <axis xyz="1.0000000000000002 -3.3306690738754686e-16 5.551115123125797e-17" />
+    <parent link="l_thumb_prox_1" />
+    <child link="l_thumb_prox_2" />
+    <limit lower="-0.5235987755982988" upper="0.5235987755982988" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_thumb_1_flex" type="revolute">
+    <origin xyz="-8.673617379884035e-17 0.009999999999999967 -1.3877787807814457e-17" rpy="0 1.5707963267948966 1.1102230246251565e-16" />
+    <axis xyz="1 4.996003610813203e-15 1.0019762797242041e-14" />
+    <parent link="l_thumb_prox_2" />
+    <child link="l_thumb_prox_3" />
+    <limit lower="-0.7853981633974483" upper="1.3089969389957472" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_thumb_2" type="revolute">
+    <origin xyz="3.469446951953614e-17 0.03199999999999997 6.938893903907228e-18" rpy="2.1382895454280515e-13 3.608224830031759e-16 8.88178419700125e-16" />
+    <axis xyz="-1.0000000000000002 4.440892098501813e-16 1.9428902930950924e-16" />
+    <parent link="l_thumb_prox_3" />
+    <child link="l_thumb_medial" />
+    <limit lower="-1.7453292519943295" upper="0" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_thumb_3" type="revolute">
+    <origin xyz="-2.0816681711721685e-17 0.03499999999999223 2.3489773424978377e-8" rpy="-2.165628787409446e-13 2.7755575615628914e-16 -8.326672684688675e-16" />
+    <axis xyz="0.9999999999999999 -5.551115123344636e-17 1.0241807402166878e-14" />
+    <parent link="l_thumb_medial" />
+    <child link="l_thumb_distal" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_ring_1_flex" type="revolute">
+    <origin xyz="-1.3877787807814457e-17 0.007999999999999993 3.469446951953614e-18" rpy="0 1.5707963267948966 -2.789760343475739e-16" />
+    <axis xyz="1 -9.714451465470126e-17 -4.8988500273022445e-30" />
+    <parent link="l_ring_prox_1" />
+    <child link="l_ring_prox_2" />
+    <limit lower="0" upper="1.3788101090755203" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_ring_2" type="revolute">
+    <origin xyz="1.254547681017737e-11 0.03999958238680058 1.6515176263463827e-6" rpy="4.128794065211621e-5 -8.922773247972648e-17 3.004322071797436e-5" />
+    <axis xyz="0.9999999995487026 -3.004322068711486e-5 1.2404225197133554e-9" />
+    <parent link="l_ring_prox_2" />
+    <child link="l_ring_medial" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_ring_3" type="revolute">
+    <origin xyz="-3.469446951953614e-17 0.03399999999999978 -1.0408340855860843e-17" rpy="6.011223420074316e-17 1.0239311894387016e-20 4.579615146186133e-16" />
+    <axis xyz="1.0000000000000002 9.159285119266612e-16 -2.3023130615865976e-18" />
+    <parent link="l_ring_medial" />
+    <child link="l_ring_distal" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_middle_1_flex" type="revolute">
+    <origin xyz="2.7755575615628914e-17 0.007999999999999952 -3.2959746043559335e-17" rpy="0 1.5707963267948966 2.465190328815662e-32" />
+    <axis xyz="1 2.2204460492503128e-16 4.930380657631324e-32" />
+    <parent link="l_middle_prox_1" />
+    <child link="l_middle_prox_2" />
+    <limit lower="0" upper="1.3788101090755203" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_middle_2" type="revolute">
+    <origin xyz="-3.642919299551295e-17 0.03999999996590618 1.651517625544073e-6" rpy="4.128794087764963e-5 1.0223448474970421e-16 4.441025988551613e-16" />
+    <axis xyz="1 8.22857700060245e-16 -2.2910681405597156e-18" />
+    <parent link="l_middle_prox_2" />
+    <child link="l_middle_medial" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_middle_3" type="revolute">
+    <origin xyz="8.673617379884035e-18 0.034000000000000086 -8.673617379884035e-19" rpy="8.928970056828162e-9 6.78022873599993e-21 4.440892102961436e-16" />
+    <axis xyz="1 3.7876848974372923e-16 -2.284291293851162e-18" />
+    <parent link="l_middle_medial" />
+    <child link="l_middle_distal" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_little_1_flex" type="revolute">
+    <origin xyz="-4.336808689942018e-18 0.008000000000000007 -6.938893903907228e-18" rpy="-5.095732991164168e-5 1.5707963057214722 5.096566853538958e-5" />
+    <axis xyz="0.9999999999999998 -9.992007221626407e-16 -1.5061773648679263e-28" />
+    <parent link="l_little_prox_1" />
+    <child link="l_little_prox_2" />
+    <limit lower="0" upper="1.3788101090755203" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_little_2" type="revolute">
+    <origin xyz="-3.122502256758253e-17 0.03999999996590617 1.651517625575298e-6" rpy="4.128794065176622e-5 1.02234484749654e-16 4.440892098500627e-16" />
+    <axis xyz="0.9999999999999999 2.774435030460418e-17 -2.2589300517736996e-18" />
+    <parent link="l_little_prox_2" />
+    <child link="l_little_medial" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_little_3" type="revolute">
+    <origin xyz="-3.122502256758253e-17 0.03399999999999978 -2.0816681711721685e-17" rpy="-1.0763417067349845e-16 -1.2940726812565935e-18 4.718337079637788e-16" />
+    <axis xyz="1 -3.8858919031323203e-16 -3.553993516568015e-18" />
+    <parent link="l_little_medial" />
+    <child link="l_little_distal" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_index_1_flex" type="revolute">
+    <origin xyz="1.9081958235744878e-17 0.008000000000000021 1.3877787807814457e-17" rpy="-2.93983425346975e-16 1.5707963057214722 3.15963269139243e-18" />
+    <axis xyz="0.9999999999999998 -8.743006318923105e-16 -2.1148580450148059e-16" />
+    <parent link="l_index_prox_1" />
+    <child link="l_index_prox_2" />
+    <limit lower="0" upper="1.3788101090755203" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_index_2" type="revolute">
+    <origin xyz="0 0.03999999996590618 1.6515176255735634e-6" rpy="4.128794065193268e-5 3.1372028925359016e-16 4.302114220422483e-16" />
+    <axis xyz="0.9999999999999999 4.163285284157741e-16 2.092114001513466e-16" />
+    <parent link="l_index_prox_2" />
+    <child link="l_index_medial" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="l_index_3" type="revolute">
+    <origin xyz="1.3877787807814457e-17 0.033999999999999975 -1.734723475976807e-18" rpy="1.2317214305793131e-16 7.495235279521713e-21 4.579532544272766e-16" />
+    <axis xyz="1 -4.1647107131302214e-17 -2.2675034591193677e-18" />
+    <parent link="l_index_medial" />
+    <child link="l_index_distal" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_hand__to__r_palm__fixed" type="fixed">
+    <parent link="r_hand" />
+    <child link="r_palm" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="r_palm">
+    <inertial>
+      <mass value="0.38502703483937795" />
+      <origin xyz="-0.0041400117447380645 -0.0027638446579404084 -0.06988767324384869" rpy="0 -0 0" />
+      <inertia ixx="5.554412613451483e-4" ixy="-4.18554975035615e-6" ixz="-3.152552071238531e-5" iyy="7.844367874002434e-4" iyz="4.567475524702809e-5" izz="4.080370737066113e-4" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_palm.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_palm_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_index_prox_1">
+    <inertial>
+      <mass value="0.0021276915673659456" />
+      <origin xyz="-3.587647447896719e-5 0.0060250242553262084 -1.1183590858943049e-10" rpy="0 -0 0" />
+      <inertia ixx="6.979458512929605e-8" ixy="1.9490010737007023e-10" ixz="1.4802103065210776e-11" iyy="4.756740895829247e-8" iyz="1.6073923037135998e-10" izz="3.8434705305955965e-8" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_index_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_index_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_little_prox_1">
+    <inertial>
+      <mass value="0.0021276915673659456" />
+      <origin xyz="-3.587647447896719e-5 0.0060250242553261946 -1.1183590511998355e-10" rpy="0 -0 0" />
+      <inertia ixx="6.979458512930405e-8" ixy="1.9490010736824495e-10" ixz="1.4802103064698722e-11" iyy="4.7567408958295896e-8" iyz="1.6073923036985038e-10" izz="3.843470530596052e-8" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_little_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_little_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_middle_prox_1">
+    <inertial>
+      <mass value="0.0021276915673659456" />
+      <origin xyz="-3.587647447896719e-5 0.006025024255326181 -1.1183590858943049e-10" rpy="0 -0 0" />
+      <inertia ixx="6.979458512930775e-8" ixy="1.9490010737044375e-10" ixz="1.4802103064932915e-11" iyy="4.7567408958296644e-8" iyz="1.607392303726328e-10" izz="3.8434705305963496e-8" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_middle_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_middle_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_ring_prox_1">
+    <inertial>
+      <mass value="0.0021276915673659456" />
+      <origin xyz="-3.587647447896719e-5 0.006025024255326181 -1.1183590685470701e-10" rpy="0 -0 0" />
+      <inertia ixx="6.979458512929337e-8" ixy="1.9490010736738742e-10" ixz="1.4802103064882204e-11" iyy="4.756740895828721e-8" iyz="1.607392303714369e-10" izz="3.843470530595144e-8" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_ring_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_ring_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_thumb_prox_1">
+    <inertial>
+      <mass value="0.056094247895558474" />
+      <origin xyz="-0.022529143634620868 3.9389863205029074e-7 0.00192692215188592" rpy="0 -0 0" />
+      <inertia ixx="4.749756027704562e-6" ixy="1.6634897746052048e-9" ixz="1.670186838962667e-7" iyy="1.2803919251418349e-5" iyz="-8.391012745821618e-11" izz="1.291412503068753e-5" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_thumb_1.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_thumb_1_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_thumb_prox_2">
+    <inertial>
+      <mass value="0.003062338444343234" />
+      <origin xyz="8.326407010886272e-6 0.008178779850068638 1.8205264726289805e-10" rpy="0 -0 0" />
+      <inertia ixx="1.165280728304829e-7" ixy="3.115806459218268e-11" ixz="-4.357427236284477e-10" iyy="7.884139159572726e-8" iyz="-3.9729834212337957e-10" izz="5.758764231441987e-8" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_thumb_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_thumb_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_thumb_prox_3">
+    <inertial>
+      <mass value="0.03332333144818648" />
+      <origin xyz="3.858795834598e-4 0.021497392480191183 -7.8890485482902e-5" rpy="0 -0 0" />
+      <inertia ixx="4.91702551481336e-6" ixy="-1.0935932400547184e-7" ixz="9.968876476229744e-9" iyy="3.005472276590735e-6" iyz="6.233449376163948e-8" izz="6.535014902021648e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_thumb_3.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_thumb_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_thumb_medial">
+    <inertial>
+      <mass value="0.02297689123465501" />
+      <origin xyz="2.967545665986081e-4 0.02142399211303661 -9.911282049922393e-4" rpy="0 -0 0" />
+      <inertia ixx="3.5830716180049693e-6" ixy="-3.0365760426877806e-7" ixz="-6.869315540659077e-9" iyy="2.8897961463281923e-6" iyz="-1.861476427790031e-7" izz="5.467762695349758e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_thumb_4.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_thumb_4_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_thumb_distal">
+    <inertial>
+      <mass value="0.011187947352037774" />
+      <origin xyz="-2.54342670243643e-4 0.016044824034360833 -0.0013601318820534725" rpy="0 -0 0" />
+      <inertia ixx="1.1720276600789286e-6" ixy="-1.2494698722910668e-8" ixz="-3.1275182709297865e-10" iyy="1.2067922248504645e-6" iyz="1.3908793149978048e-8" izz="1.8304448654270752e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_thumb_5.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_thumb_5_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_ring_prox_2">
+    <inertial>
+      <mass value="0.019855487555176243" />
+      <origin xyz="-5.825148649361185e-4 0.024115295035758058 -1.8206557919683494e-4" rpy="0 -0 0" />
+      <inertia ixx="4.029963994257454e-6" ixy="1.3237552949852818e-7" ixz="1.974554374142064e-9" iyy="1.3325281830419703e-6" iyz="-7.084763295673213e-8" izz="4.41971552557047e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_ring_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_ring_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_ring_medial">
+    <inertial>
+      <mass value="0.0152618949631244" />
+      <origin xyz="-1.11555888748038e-4 0.020049937684603225 -9.556153820669648e-4" rpy="0 -0 0" />
+      <inertia ixx="2.1987586547521773e-6" ixy="1.7719398873221477e-7" ixz="-3.8026292185804555e-9" iyy="1.1204370609490575e-6" iyz="-1.0229749788260781e-7" izz="2.771947854192716e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_ring_3.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_ring_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_ring_distal">
+    <inertial>
+      <mass value="0.008221728756962298" />
+      <origin xyz="-1.642601922446467e-4 0.013413384114830534 -9.463474728170217e-4" rpy="0 -0 0" />
+      <inertia ixx="6.521121917353361e-7" ixy="1.640698900899635e-8" ixz="-1.0999781891239508e-9" iyy="6.109958391801373e-7" iyz="-7.371798341885662e-9" izz="9.557095941548775e-7" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_ring_4.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_ring_4_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_middle_prox_2">
+    <inertial>
+      <mass value="0.019855487555176243" />
+      <origin xyz="-5.825148649361029e-4 0.024115295035758044 -1.82065579196828e-4" rpy="0 -0 0" />
+      <inertia ixx="4.029963994257156e-6" ixy="1.3237552949852532e-7" ixz="1.974554374141775e-9" iyy="1.3325281830419864e-6" iyz="-7.084763295675597e-8" izz="4.419715525570188e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_middle_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_middle_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_middle_medial">
+    <inertial>
+      <mass value="0.0152618949631244" />
+      <origin xyz="-1.1155588874803453e-4 0.020049937684603197 -9.556153820669613e-4" rpy="0 -0 0" />
+      <inertia ixx="2.1987586547524695e-6" ixy="1.7719398873220572e-7" ixz="-3.8026292185794595e-9" iyy="1.1204370609490145e-6" iyz="-1.0229749788259288e-7" izz="2.771947854192966e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_middle_3.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_middle_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_middle_distal">
+    <inertial>
+      <mass value="0.008221728756962298" />
+      <origin xyz="-1.642601922446866e-4 0.013413384114830451 -9.46347472816949e-4" rpy="0 -0 0" />
+      <inertia ixx="6.521121917354759e-7" ixy="1.640698900899341e-8" ixz="-1.0999781891252372e-9" iyy="6.109958391800732e-7" iyz="-7.371798341899598e-9" izz="9.55709594155018e-7" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_middle_4.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_middle_4_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_little_prox_2">
+    <inertial>
+      <mass value="0.019855487555176243" />
+      <origin xyz="-5.825148649361359e-4 0.024115295035758044 -1.8206557919683494e-4" rpy="0 -0 0" />
+      <inertia ixx="4.029963994257498e-6" ixy="1.323755294985611e-7" ixz="1.9745543741410417e-9" iyy="1.332528183041974e-6" iyz="-7.084763295673598e-8" izz="4.419715525570517e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_little_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_little_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_little_medial">
+    <inertial>
+      <mass value="0.0152618949631244" />
+      <origin xyz="-1.115558887480432e-4 0.020049937684603173 -9.556153820669544e-4" rpy="0 -0 0" />
+      <inertia ixx="2.1987586547521917e-6" ixy="1.7719398873220096e-7" ixz="-3.802629218578008e-9" iyy="1.1204370609491066e-6" iyz="-1.0229749788260572e-7" izz="2.771947854192666e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_little_3.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_little_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_little_distal">
+    <inertial>
+      <mass value="0.008221728756962298" />
+      <origin xyz="-1.642601922447265e-4 0.013413384114830451 -9.463474728170217e-4" rpy="0 -0 0" />
+      <inertia ixx="6.521121917354623e-7" ixy="1.6406989008998586e-8" ixz="-1.0999781891248195e-9" iyy="6.109958391800357e-7" iyz="-7.371798341893073e-9" izz="9.557095941550126e-7" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_little_4.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_little_4_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_index_prox_2">
+    <inertial>
+      <mass value="0.019855487555176243" />
+      <origin xyz="-5.825148649361081e-4 0.024115295035758044 -1.820655791968176e-4" rpy="0 -0 0" />
+      <inertia ixx="4.029963994257256e-6" ixy="1.3237552949848647e-7" ixz="1.9745543741439393e-9" iyy="1.3325281830419735e-6" iyz="-7.084763295674228e-8" izz="4.419715525570256e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_index_2.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_index_2_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_index_medial">
+    <inertial>
+      <mass value="0.0152618949631244" />
+      <origin xyz="-1.1155588874804667e-4 0.020049937684603142 -9.556153820669613e-4" rpy="0 -0 0" />
+      <inertia ixx="2.1987586547521476e-6" ixy="1.7719398873220432e-7" ixz="-3.802629218573052e-9" iyy="1.1204370609491212e-6" iyz="-1.0229749788260786e-7" izz="2.7719478541927303e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_index_3.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_index_3_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_index_distal">
+    <inertial>
+      <mass value="0.008221728756962298" />
+      <origin xyz="-1.6426019224460853e-4 0.013413384114830507 -9.463474728169698e-4" rpy="0 -0 0" />
+      <inertia ixx="6.521121917354041e-7" ixy="1.6406989009007556e-8" ixz="-1.0999781891264848e-9" iyy="6.109958391800505e-7" iyz="-7.371798341892226e-9" izz="9.557095941549235e-7" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_index_4.obj" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_r_hand_index_4_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_index_1_add" type="revolute">
+    <origin xyz="0.030782141148626194 0.005377354978953187 -0.1221336990898428" rpy="-1.5707963267948966 -0.08726646259971567 1.570796326794896" />
+    <axis xyz="1 -7.771561172376096e-16 3.8424332530392627e-16" />
+    <parent link="r_palm" />
+    <child link="r_index_prox_1" />
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_little_1_add" type="revolute">
+    <origin xyz="-0.057505726903108435 0.0038292610379148852 -0.10443890437418663" rpy="-1.3089969389957474 -0.0872664625997155 1.5707963267948961" />
+    <axis xyz="1 -8.326672684688674e-17 3.2959746043559335e-16" />
+    <parent link="r_palm" />
+    <child link="r_little_prox_1" />
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_middle_1_add" type="revolute">
+    <origin xyz="2.474277839724457e-5 0.006017712162470946 -0.12945301518989988" rpy="-1.4835298641951806 -0.08726646259971567 1.5707963267948961" />
+    <axis xyz="1.0000000000000002 1.3877787807814457e-17 2.194425197110661e-16" />
+    <parent link="r_palm" />
+    <child link="r_middle_prox_1" />
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_ring_1_add" type="revolute">
+    <origin xyz="-0.028989540736878514 0.0049215875693194595 -0.11692425375983485" rpy="-1.396263401595463 -0.08726646259971586 1.5707963267948961" />
+    <axis xyz="1 -5.412337245047638e-16 2.688821387764051e-16" />
+    <parent link="r_palm" />
+    <child link="r_ring_prox_1" />
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_thumb_1_rot" type="revolute">
+    <origin xyz="0.012404891437995301 0.01943254032497523 -0.032262065163262715" rpy="-0.33753360490721546 -0.6160560331490934 -2.352741078622881" />
+    <axis xyz="1.0000000000000002 -5.273559366969494e-16 -1.6653345369377348e-16" />
+    <parent link="r_palm" />
+    <child link="r_thumb_prox_1" />
+    <limit lower="-0.9599310885968813" upper="0.6981317007977318" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_thumb_1_add" type="revolute">
+    <origin xyz="-0.045300000000000014 -8.673617379884035e-18 1.734723475976807e-17" rpy="0 1.5707963267948966 1.5707963267948963" />
+    <axis xyz="1.0000000000000002 1.1102230246251556e-16 -4.718447854656917e-16" />
+    <parent link="r_thumb_prox_1" />
+    <child link="r_thumb_prox_2" />
+    <limit lower="-0.5235987755982988" upper="0.5235987755982988" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_thumb_1_flex" type="revolute">
+    <origin xyz="0 0.01 0" rpy="0 1.5707963267948966 0" />
+    <axis xyz="1 0 0" />
+    <parent link="r_thumb_prox_2" />
+    <child link="r_thumb_prox_3" />
+    <limit lower="-0.7853981633974483" upper="1.3089969389957472" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_thumb_2" type="revolute">
+    <origin xyz="-4.163336342344337e-17 0.03199999999999999 -7.28583859910259e-17" rpy="-3.219646771412954e-15 6.938893903907228e-16 9.992007221626409e-16" />
+    <axis xyz="-1 -1.6653345369377708e-16 4.1633363423443065e-16" />
+    <parent link="r_thumb_prox_3" />
+    <child link="r_thumb_medial" />
+    <limit lower="-1.7453292519943295" upper="0" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_thumb_3" type="revolute">
+    <origin xyz="3.469446951953614e-17 0.03499999999999992 4.163336342344337e-17" rpy="1.5265566588595904e-15 1.6653345369377348e-16 -2.220446049250313e-16" />
+    <axis xyz="1 -6.10622663543836e-16 8.326672684688837e-17" />
+    <parent link="r_thumb_medial" />
+    <child link="r_thumb_distal" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_ring_1_flex" type="revolute">
+    <origin xyz="6.938893903907228e-18 0.007999999999999952 -5.204170427930421e-18" rpy="0 1.5707963267948966 -1.7208506695045864e-16" />
+    <axis xyz="1 1.6653345369377343e-16 3.103849316156344e-17" />
+    <parent link="r_ring_prox_1" />
+    <child link="r_ring_prox_2" />
+    <limit lower="0" upper="1.3788101090755203" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_ring_2" type="revolute">
+    <origin xyz="-1.0408340855860843e-17 0.03999999996590611 1.6515176256073905e-6" rpy="4.128794065135517e-5 5.551580991246768e-17 8.326672684688664e-17" />
+    <axis xyz="1 2.497528335131914e-16 -8.872752515452278e-16" />
+    <parent link="r_ring_prox_2" />
+    <child link="r_ring_medial" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_ring_3" type="revolute">
+    <origin xyz="0 0.03399999999999995 -3.469446951953614e-18" rpy="3.792213938702548e-15 1.5602222781903873e-21 -2.7766289130368627e-17" />
+    <axis xyz="1 2.8310579993551144e-15 2.7744337415221973e-16" />
+    <parent link="r_ring_medial" />
+    <child link="r_ring_distal" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_middle_1_flex" type="revolute">
+    <origin xyz="1.0408340855860843e-17 0.007999999999999952 1.3877787807814457e-17" rpy="0 1.5707963267948966 3.871504595454398e-17" />
+    <axis xyz="1 -5.419798421288401e-16 4.1305071668849913e-16" />
+    <parent link="r_middle_prox_1" />
+    <child link="r_middle_prox_2" />
+    <limit lower="0" upper="1.3788101090755203" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_middle_2" type="revolute">
+    <origin xyz="-8.673617379884035e-18 0.03999999996590613 1.6515176255900432e-6" rpy="4.128794065178538e-5 -2.220400212495907e-16 -8.628165973397612e-30" />
+    <axis xyz="1 2.220446049250313e-16 -4.584089030884201e-21" />
+    <parent link="r_middle_prox_2" />
+    <child link="r_middle_medial" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_middle_3" type="revolute">
+    <origin xyz="-1.3877787807814457e-17 0.03400000000000003 6.938893903907228e-18" rpy="-1.2459515840931854e-16 -2.067951808107105e-25 -2.159555401718737e-31" />
+    <axis xyz="1 2.2204460492503128e-16 -4.58429582604054e-21" />
+    <parent link="r_middle_medial" />
+    <child link="r_middle_distal" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_little_1_flex" type="revolute">
+    <origin xyz="2.0816681711721685e-17 0.007999999999999952 -5.204170427930421e-17" rpy="0 1.5707963267948966 1.2851099841486214e-16" />
+    <axis xyz="1.0000000000000002 2.7755575615628923e-16 3.1038493161563575e-17" />
+    <parent link="r_little_prox_1" />
+    <child link="r_little_prox_2" />
+    <limit lower="0" upper="1.3788101090755203" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_little_2" type="revolute">
+    <origin xyz="3.469446951953614e-18 0.039999999965905975 1.651517625603921e-6" rpy="4.128794065183498e-5 8.327096201162291e-17 2.775557561562892e-16" />
+    <axis xyz="1.0000000000000002 -5.551566568693689e-17 3.05316500365315e-16" />
+    <parent link="r_little_prox_2" />
+    <child link="r_little_medial" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_little_3" type="revolute">
+    <origin xyz="2.0816681711721685e-17 0.0339999999999997 2.0816681711721685e-17" rpy="1.1518162255409487e-10 -4.4200066857320884e-17 1.1100700749857672e-16" />
+    <axis xyz="1.0000000000000004 6.3282541201054426e-15 -1.0549699831888902e-15" />
+    <parent link="r_little_medial" />
+    <child link="r_little_distal" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_index_1_flex" type="revolute">
+    <origin xyz="0 0.008000000000000021 -2.0816681711721685e-17" rpy="0 1.5707963267948966 4.678769774125589e-26" />
+    <axis xyz="1 -3.469446951953614e-16 4.1305071667791873e-16" />
+    <parent link="r_index_prox_1" />
+    <child link="r_index_prox_2" />
+    <limit lower="0" upper="1.3788101090755203" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_index_2" type="revolute">
+    <origin xyz="-6.938893903907228e-18 0.03999999996590617 1.651517625603921e-6" rpy="4.1287940651800775e-5 -1.8822469691295473e-16 -2.4980018054066027e-16" />
+    <axis xyz="0.9999999999999998 5.134686514075702e-16 3.379868770296976e-17" />
+    <parent link="r_index_prox_2" />
+    <child link="r_index_medial" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="r_index_3" type="revolute">
+    <origin xyz="-6.938893903907228e-18 0.03399999999999995 1.3877787807814457e-17" rpy="1.369845819350519e-12 1.3875622819686661e-17 -4.1644829999126715e-17" />
+    <axis xyz="0.9999999999999996 -2.178823579450187e-15 4.7787586187840163e-17" />
+    <parent link="r_index_medial" />
+    <child link="r_index_distal" />
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="neck_pitch" type="revolute">
+    <origin xyz="-0.0078 0 0.061" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <parent link="neck_1" />
+    <child link="neck_2" />
+    <limit lower="-0.383972" upper="0.785398" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="neck_2">
+    <inertial>
+      <mass value="0.296229" />
+      <origin xyz="-0.0106207 -0.00353078 0.00922837" rpy="0 0 0" />
+      <inertia ixx="0.000116643" ixy="1.10789e-05" ixz="9.32014e-07" iyy="0.000245092" iyz="-9.68714e-06" izz="0.000298007" />
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_neck_2_collision_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="neck_roll" type="revolute">
+    <origin xyz="-2.5e-05 0 0.011" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="neck_2" />
+    <child link="neck_3" />
+    <limit lower="-0.523599" upper="0.523599" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <link name="neck_3">
+    <inertial>
+      <mass value="0.239537" />
+      <origin xyz="-0.00825213 1.66525e-07 0.0487151" rpy="0 0 0" />
+      <inertia ixx="0.000150319" ixy="1.704e-08" ixz="-6.47627e-05" iyy="0.000203575" iyz="1.11681e-09" izz="9.24836e-05" />
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_neck_3_collision_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="neck_yaw" type="revolute">
+    <origin xyz="2.5e-05 0 -0.072" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <parent link="neck_3" />
+    <child link="head" />
+    <limit lower="-0.785398" upper="0.785398" effort="1e+09" velocity="1e+09" />
+    <dynamics damping="2" friction="0" />
+  </joint>
+  <joint name="neck_fixed_joint" type="fixed">
+    <origin xyz="0.06 0 0.305" rpy="0 0 0" />
+    <parent link="chest" />
+    <child link="neck_1" />
+  </joint>
+  <link name="neck_1">
+    <inertial>
+      <mass value="0.45606" />
+      <origin xyz="-0.0170021 0.00133439 0.0222493" rpy="0 0 0" />
+      <inertia ixx="0.000710573" ixy="-5.78186e-06" ixz="-0.000142806" iyy="0.00069741" iyz="-2.23631e-05" izz="0.000262404" />
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gb_robot_models/meshes/sim_gene01_neck_1_collision_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

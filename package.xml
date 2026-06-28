@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>gb_robot_models</name>
+  <version>0.1.0</version>
+  <description>Robot models for Generative Bionics robots.</description>
+  <maintainer email="silvio.traversaro@gbionics.ai">Silvio Traversaro</maintainer>
+  <license>CC-BY-NC-4.0</license>
+
+  <buildtool_depend>cmake</buildtool_depend>
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+</package>

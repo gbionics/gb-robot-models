@@ -1,0 +1,60 @@
+[workspace]
+name = "gb-robot-models"
+version = "0.1.0"
+description = "Public robot models from Generative Bionics"
+authors = ["Silvio Traversaro <silvio.traversaro@gbionics.ai>"]
+channels = ["conda-forge", "robostack-jazzy"]
+platforms = ["linux-64", "win-64", "osx-arm64", "linux-aarch64"]
+preview = ["pixi-build"]
+
+[package]
+name = { workspace = true }
+version = { workspace = true }
+description = { workspace = true }
+
+[package.build]
+backend = { name = "pixi-build-cmake", version = "*", channels = ["conda-forge"] }
+
+[package.build.config]
+compilers = []
+
+[feature.mnt.dependencies]
+python = "*"
+
+[feature.mnt.tasks]
+# This is mostly used only for mantainance, to set a version before a release
+set-version = "python scripts/set_version.py"
+
+# ROS feature - CMake/pixi-build installation
+[feature.ros]
+channels = ["conda-forge", "robostack-jazzy"]
+
+[feature.ros.dependencies]
+gb-robot-models = { path = "." }
+ros-jazzy-ros2launch = "*"
+ros-jazzy-launch-ros = "*"
+ros-jazzy-robot-state-publisher = "*"
+ros-jazzy-joint-state-publisher-gui = "*"
+ros-jazzy-tf2-ros = "*"
+ros-jazzy-rviz2 = "*"
+
+[feature.ros.tasks]
+view-rviz = "ros2 launch gb_robot_models display.launch.py"
+
+[feature.rerun.dependencies]
+rerun-sdk = "*"
+
+[feature.rerun.pypi-dependencies]
+gb-robot-models = { path = "./" }
+
+[feature.rerun.tasks]
+view-rerun = "gb-robot-models show-in-rerun package://gb_robot_models/robots/gene01_0/model.urdf"
+
+# Environments using features
+[environments]
+ros = ["ros"]
+rerun = ["rerun"]
+mnt = ["mnt"]
+
+[dependencies]
+idyntree = "*"

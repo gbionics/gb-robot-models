@@ -1,0 +1,10 @@
+# Face-level diffuse colors corresponding to the OBJ per-vertex RGB values.
+
+newmtl vc_000000__Personalizza
+Ka 0.0000 0.0000 0.0000
+Kd 0 0 0
+Ks 0.1804 0.1804 0.1804
+Tf 1.0000 1.0000 1.0000
+d 1
+Ns 0.0000
+Ni 1.0000
