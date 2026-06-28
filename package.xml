@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>gb_robot_models</name>
+  <version>0.1.0</version>
+  <description>Primitive-shape humanoid URDF with an STL face.</description>
+  <maintainer email="silvio.traversaro@gbionics.ai">Silvio Traversaro</maintainer>
+  <license></license>
+
+  <buildtool_depend>cmake</buildtool_depend>
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+</package>
