@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
 
 [project]
 name = "gb-robot-models"
@@ -16,9 +16,9 @@ dependencies = [
 [project.scripts]
 gb-robot-models = "gb_robot_models.cli:main"
 
-[tool.setuptools]
-package-dir = { "" = "src" }
-include-package-data = true
+[tool.hatch.build.targets.wheel]
+packages = ["src/gb_robot_models"]
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.hatch.build.targets.wheel.shared-data]
+"package.xml" = "share/gb_robot_models/package.xml"
+"share" = "share"
