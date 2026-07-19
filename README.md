@@ -10,37 +10,57 @@ The models contained in this package are:
 
 To simplify the use of the provided models in all tools, the provided models have been simplified and all closed loop mechanism in the robot are represented by their serial equivalent. [Contact Generative Bionics](https://gbionics.ai/contact/) (including `gb-robot-models` in the request text) if for your use case you need a model with a representation of the closed loop mechanisms or more information.
 
-## Package installation from source
+## No-installation demos
 
-If the `gb-robot-models` is not available in your preferred package manager or distribution channel, you can also install it from source.
+To visualize the robot model without installing the model explicitly, just install [uv](https://docs.astral.sh/uv/getting-started/installation/) or [pixi](https://pixi.prefix.dev/latest/installation/), and run the following commands.
 
-### Install via pip/uv
+### Rerun
 
-The `gb-robot-models` is a regular Python package, so it can be installed from source with the following command:
+~~~
+uvx gb-robot-models show-in-rerun package://gb_robot_models/robots/gene01_0/model.urdf
+~~~
+
+### RViz (ROS 2)
+
+~~~
+pixi exec -c conda-forge -c robostack-jazzy -s gb-robot-models -s ros-jazzy-desktop ros2 launch gb_robot_models display.launch.py
+~~~
+
+
+## Package Installation
+
+To simplify the use of models in existing pipelines, the Generative Bionics robot models are available in different package managers and distribution platforms. If you would like for the models to be available in a channel not mentioned here, please [open an issue](https://github.com/gbionics/gb-robot-models/issues/new).
+
+### conda/pixi via conda-forge
 
 ~~~bash
-python -m pip install "git+https://github.com/gbionics/gb-robot-models.git"
+pixi add gb-robot-models
 ~~~
 
 or 
 
 ~~~bash
-uv add "git+https://github.com/gbionics/gb-robot-models.git"
+conda create -n gb-robot-models gb-robot-models
 ~~~
 
-### Instal via CMake
-
-The `gb-robot-models` is a regular CMake package, so it can be installed from source with the following command:
+### pip/uv via pypi
 
 ~~~bash
-git clone https://github.com/gbionics/gb-robot-models
-cd gb-robot-models
-cmake -Bbuild -S. -DCMAKE_INSTALL_PREFIX=<desired_install_prefix>
+uv pip install gb-robot-models
 ~~~
 
-### Install via CMake in a colcon/ROS 2 workspace
+or
 
-As `gb-robot-models` is a regular CMake package equipped with a `package.xml`, so it can be built as part of regular colcon/ROS 2 workspace, for example on Linux:
+~~~bash
+pip install gb-robot-models
+~~~
+
+### With ROS
+
+> [!WARNING]
+> Supporting the installation of models with `sudo apt install ros-<distro>-gb-robot-models` is tracked in https://github.com/gbionics/gb-robot-models/issues/3 .
+
+Even if `gb-robot-models` still needs to be packaged as `apt` binary package, as `gb-robot-models` is a regular CMake package equipped with a `package.xml`, so it can be built from source as part of regular colcon/ROS 2 workspace, for example on Linux:
 
 ~~~bash
 mkdir -p ~/gb_robot_models_ws/src
@@ -49,14 +69,10 @@ git clone https://github.com/gbionics/gb-robot-models src/gb-robot-models
 colcon build
 ~~~
 
-### Use directly from source repo
+### From source
 
-To use the models directly from the source repo, just add the repository folder to the `AMENT_PREFIX_PATH` environment variable, for example on Linux:
+If the `gb-robot-models` is not available in your preferred package manager or distribution channel, you can also install it from source, following the documentation available in [`install_from_source.md`](./install_from_source.md)
 
-~~~bash
-git clone https://github.com/gbionics/gb-robot-models
-export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH}:$(pwd)/gb-robot-models
-~~~
 
 ## Model retrieval
 
