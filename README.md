@@ -17,7 +17,7 @@ To visualize the robot model without installing the model explicitly, just insta
 ### Rerun
 
 ~~~
-uvx gb-robot-models show-in-rerun package://gb_robot_models/robots/gene01_0/model.urdf
+uvx --with rerun-sdk gb-robot-models show-in-rerun package://gb_robot_models/robots/gene01_0/model.urdf
 ~~~
 
 ### RViz (ROS 2)
