@@ -23,7 +23,7 @@ uvx --with rerun-sdk gb-robot-models show-in-rerun package://gb_robot_models/rob
 ### RViz (ROS 2)
 
 ~~~
-pixi exec -c conda-forge -c robostack-jazzy -s gb-robot-models -s ros-jazzy-desktop ros2 launch gb_robot_models display.launch.py
+pixi exec -c conda-forge -c robostack-jazzy -s gb-robot-models -s ros-jazzy-desktop -s ros-jazzy-joint-state-publisher-gui ros2 launch gb_robot_models display.launch.py
 ~~~
 
 
